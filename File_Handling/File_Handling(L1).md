@@ -44,6 +44,77 @@
 
 ## Writes to and reads from a file:
 
+### Function to write to a file
+```cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+// Function to write to a file
+void writeToFile() {
+    ofstream outFile("example.txt");
+    outFile << "Hello, World!" << endl;
+    outFile.close();
+}
+
+int main() {
+    writeToFile();
+    return 0;
+}
+
+```
+
+### Function to write to a file with Error handling
+
+```cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+// Function to write to a file
+void writeToFile() {
+    ofstream outFile("example.txt");
+    if (!outFile) {
+        cout << "Error writing to file!" << endl;
+        return;
+    }
+    outFile << "Hello, World!" << endl;
+    outFile.close();
+}
+
+int main() {
+    writeToFile();
+    return 0;
+}
+
+```
+
+### Reading from a file
+
+```cpp
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+// Function to read from a file
+void readFromFile() {
+    ifstream inFile("example.txt");
+    string line;
+    while (getline(inFile, line)) {
+        cout << line << endl;
+    }
+    inFile.close();
+}
+
+int main() {
+    readFromFile();
+    return 0;
+}
+
+```
+
+### Complete Code
+
 ```cpp
 #include <iostream>
 #include <fstream>
